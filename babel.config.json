@@ -1,0 +1,32 @@
+{
+  "presets": [
+    "@babel/preset-typescript",
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": true
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    "babel-plugin-parameter-decorator",
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-object-rest-spread",
+    [
+      "babel-plugin-module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "@configuration": "./src/configuration",
+          "@services": "./src/services",
+          "@enums": "./src/enums",
+          "@root": "./src"
+        },
+        "extensions": [".js", ".ts"]
+      }
+    ]
+  ],
+  "ignore": ["**/*.spec.ts"]
+}
